@@ -6,7 +6,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-<<<<<<< HEAD
   def setup
     @user = users(:pawitra)
     @other_user = users(:tiwagar)
@@ -58,6 +57,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-=======
->>>>>>> rails-ruby
 end
