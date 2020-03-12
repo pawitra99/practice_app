@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+<<<<<<< HEAD
 $gray-medium-light: #eaeaea;
 
 @mixin box-sizing {
@@ -76,6 +77,10 @@ input, textarea, select, .uneditable-input{
 input{
     height: auto !important;
 }
+=======
+/* mixins, variables, etc. */
+$gray-medium-light: #eaeaea;
+>>>>>>> rails-ruby
 /* universal */
 body {
 padding-top: 60px;
@@ -148,6 +153,7 @@ line-height: 1.7em;
     float: right;
     list-style: none;
     li {
+<<<<<<< HEAD
         float: left;
         margin-left: 15px;
         }
@@ -194,3 +200,10 @@ line-height: 1.7em;
         border-bottom: 1px solid $gray-lighter;
     }
 }
+=======
+    float: left;
+    margin-left: 15px;
+}
+}
+}
+>>>>>>> rails-ruby
