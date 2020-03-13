@@ -1,0 +1,15 @@
+one:
+  follower: pawitra
+  followed: lana
+
+two:
+  follower: pawitra
+  followed: malory
+  
+three:
+  follower: lana
+  followed: pawitra
+
+four:
+  follower: tiwagar
+  followed: pawitra

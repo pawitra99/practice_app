@@ -93,5 +93,38 @@ class UsersTest < ActiveSupport::TestCase
       end
     end
 
+    test "should follow and unfollow a user" do
+      pawitra = users(:pawitra)
+      tiwagar = users(:tiwagar)
 
+      assert_not pawitra.following?(tiwagar)
+
+      pawitra.follow(tiwagar)
+      assert pawitra.following?(tiwagar)
+      assert tiwagar.followers.include?(pawitra)
+
+      pawitra.unfollow(tiwagar)
+      assert_not pawitra.following?(tiwagar)
+
+    end
+
+    test "feed should have the right posts" do
+      pawitra = users(:pawitra)
+      tiwagar = users(:tiwagar)
+      lana = users(:lana)
+      # Posts from followed user
+      lana.microposts.each do |post_following|
+        assert pawitra.feed.include?(post_following)
+      end
+
+      # Posts from self
+      pawitra.microposts.each do |post_self|
+        assert pawitra.feed.include?(post_self)
+      end
+
+      # Posts from unfollowed user
+      tiwagar.microposts.each do |post_unfollowed|
+        assert_not pawitra.feed.include?(post_unfollowed)
+      end
+    end
 end
